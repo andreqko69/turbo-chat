@@ -1,0 +1,26 @@
+{
+  "name": "turbo-chat",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "check-types": "turbo run check-types",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Andrii Stepanov",
+  "license": "ISC",
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "turbo": "^2.4.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "turbo run check-types",
+      "turbo run format"
+    ]
+  }
+}
