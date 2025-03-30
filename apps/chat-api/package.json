@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "check-types": "tsc"
+    "lint": "npx tsc --noEmit && npx eslint"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
@@ -11,6 +11,11 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "tsx": "^4.7.1"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.23.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.7.2"
   }
 }

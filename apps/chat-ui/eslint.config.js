@@ -1,13 +1,15 @@
 import baseConfig from '@repo/eslint-config';
+import { globalIgnores } from 'eslint/config';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
 const config = Array.isArray(baseConfig) ? baseConfig : [baseConfig];
 
+/** @type {import("eslint").Linter.Config[]} */
 export default [
   ...config,
+  globalIgnores(['.react-router/*']),
   {
     plugins: {
       react: reactPlugin,
