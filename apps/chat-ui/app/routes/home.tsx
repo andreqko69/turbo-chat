@@ -1,4 +1,4 @@
-import { Welcome } from '../welcome/welcome';
+import { redirect } from 'react-router';
 
 export function meta() {
   return [
@@ -10,6 +10,10 @@ export function meta() {
   ];
 }
 
+export function loader() {
+  return redirect('/auth/login');
+}
+
 export default function Home() {
-  return <Welcome />;
+  return <div>Home</div>;
 }
