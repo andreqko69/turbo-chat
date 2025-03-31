@@ -1,3 +1,4 @@
+import { CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import LoginForm from '~/features/auth/login-form';
 
 export function meta() {
@@ -11,5 +12,14 @@ export function meta() {
 }
 
 export default function Login() {
-  return <LoginForm />;
+  return (
+    <>
+      <CardHeader>
+        <CardTitle>Login</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <LoginForm />
+      </CardContent>
+    </>
+  );
 }

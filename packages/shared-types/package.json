@@ -1,0 +1,26 @@
+{
+  "name": "@repo/shared-types",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "npm run clean",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit && npx eslint",
+    "prepublishOnly": "npm run build"
+  },
+  "private": true,
+  "dependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "arktype": "^2.1.15",
+    "eslint": "^9.23.0",
+    "prettier": "3.5.3",
+    "typescript": "^5.7.2"
+  }
+}
