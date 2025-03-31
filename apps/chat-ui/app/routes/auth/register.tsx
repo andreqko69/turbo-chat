@@ -1,5 +1,5 @@
-import { CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import LoginForm from '~/features/auth/login-form';
+import { CardContent, CardHeader, CardTitle } from '~/components/atoms/card';
+import SignupForm from '~/features/auth/signup-form';
 
 export function meta() {
   return [
@@ -18,7 +18,7 @@ export default function Register() {
         <CardTitle>Registration</CardTitle>
       </CardHeader>
       <CardContent>
-        <LoginForm />
+        <SignupForm />
       </CardContent>
     </>
   );

@@ -1,1 +1,1 @@
-export { LoginSchema } from './src/types/auth';
+export { LoginSchema, SignupSchema } from './src/schemas/auth';

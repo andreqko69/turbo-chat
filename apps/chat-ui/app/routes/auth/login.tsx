@@ -1,4 +1,4 @@
-import { CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { CardContent, CardHeader, CardTitle } from '~/components/atoms/card';
 import LoginForm from '~/features/auth/login-form';
 
 export function meta() {

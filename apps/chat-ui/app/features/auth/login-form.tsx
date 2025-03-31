@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { arktypeResolver } from '@hookform/resolvers/arktype';
 import { LoginSchema } from '@repo/shared-types';
+import { NavLink } from 'react-router';
 
 import {
   Form,
@@ -9,9 +10,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '~/components/ui/form';
-import { Input } from '~/components/ui/input';
-import { Button } from '~/components/ui/button';
+} from '~/components/molecules/form';
+import { Input } from '~/components/atoms/input';
+import { Button } from '~/components/atoms/button';
 
 type LoginData = typeof LoginSchema.infer;
 
@@ -60,7 +61,7 @@ const LoginForm = () => {
               </FormControl>
               {form.formState.errors.password && (
                 <FormMessage>
-                  {form.formState.errors.password.message}
+                  Password {form.formState.errors.password.message}
                 </FormMessage>
               )}
             </FormItem>
@@ -68,6 +69,11 @@ const LoginForm = () => {
         />
         <Button type="submit">Login</Button>
       </form>
+      <div className="mt-3 flex justify-end">
+        <NavLink to="/auth/register" className="text-cold">
+          Register
+        </NavLink>
+      </div>
     </Form>
   );
 };

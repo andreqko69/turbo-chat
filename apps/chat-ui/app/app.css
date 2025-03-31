@@ -3,6 +3,60 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-sans:
+    'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Main colors */
+  --color-gray: oklch(0.95 0.0111 89.72);
+  --color-teal: oklch(0.81 0.0515 204);
+  --color-sea: oklch(0.67 0.0882 196.21);
+  --color-cold: oklch(0.48 0.0813 202.78);
+
+  /* Added colors */
+  --color-success: oklch(0.76 0.132 142.5); /* A vibrant green */
+  --color-success-light: oklch(0.88 0.095 142.5); /* Lighter version */
+  --color-success-dark: oklch(0.62 0.145 142.5); /* Darker version */
+
+  --color-danger: oklch(0.71 0.19 27.16); /* A rich red */
+  --color-danger-light: oklch(0.82 0.14 27.16); /* Lighter version */
+  --color-danger-dark: oklch(0.61 0.21 27.16); /* Darker version */
+
+  /* Global text colors */
+  --color-text: oklch(0.25 0.02 255); /* Dark navy-ish for text */
+  --color-text-muted: oklch(0.55 0.02 255); /* Lighter version */
+  --color-text-inverted: oklch(0.98 0.005 89); /* Almost white */
+
+  /* Global background colors */
+  --color-background: oklch(0.98 0.005 89); /* Almost white background */
+  --color-background-muted: oklch(0.95 0.01 200); /* Light blue tinted */
+  --color-background-dark: oklch(0.35 0.03 235); /* Dark for contrast */
+
+  /* Apply the colors as custom properties that Tailwind v4 can use */
+  --gray-500: var(--color-gray);
+  --teal-500: var(--color-teal);
+  --sea-500: var(--color-sea);
+  --cold-500: var(--color-cold);
+
+  --success-500: var(--color-success);
+  --success-300: var(--color-success-light);
+  --success-700: var(--color-success-dark);
+
+  --danger-500: var(--color-danger);
+  --danger-300: var(--color-danger-light);
+  --danger-700: var(--color-danger-dark);
+
+  /* Map these to new v4 color classes */
+  --text: var(--color-text);
+  --text-muted: var(--color-text-muted);
+  --text-inverted: var(--color-text-inverted);
+
+  --bg: var(--color-background);
+  --bg-muted: var(--color-background-muted);
+  --bg-dark: var(--color-background-dark);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -41,22 +95,16 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@theme {
-  --font-sans:
-    'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
 @layer base {
   :root {
     --radius: 0.625rem;
-    --background: oklch(1 0 0);
+    --background: var(--gray-500);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: var(--cold-500);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -67,7 +115,7 @@
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --ring: var(--teal-500);
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);
@@ -115,92 +163,6 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
-  }
-
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-
-  :root {
-    /* Main colors */
-    --color-gray: oklch(0.95 0.0111 89.72);
-    --color-teal: oklch(0.81 0.0515 204);
-    --color-sea: oklch(0.67 0.0882 196.21);
-    --color-cold: oklch(0.48 0.0813 202.78);
-
-    /* Shadcn overrides */
-
-    --primary: var(--color-sea);
-
-    /* Added colors */
-    --color-success: oklch(0.76 0.132 142.5); /* A vibrant green */
-    --color-success-light: oklch(0.88 0.095 142.5); /* Lighter version */
-    --color-success-dark: oklch(0.62 0.145 142.5); /* Darker version */
-
-    --color-danger: oklch(0.71 0.19 27.16); /* A rich red */
-    --color-danger-light: oklch(0.82 0.14 27.16); /* Lighter version */
-    --color-danger-dark: oklch(0.61 0.21 27.16); /* Darker version */
-
-    /* Global text colors */
-    --color-text: oklch(0.25 0.02 255); /* Dark navy-ish for text */
-    --color-text-muted: oklch(0.55 0.02 255); /* Lighter version */
-    --color-text-inverted: oklch(0.98 0.005 89); /* Almost white */
-
-    /* Global background colors */
-    --color-background: oklch(0.98 0.005 89); /* Almost white background */
-    --color-background-muted: oklch(0.95 0.01 200); /* Light blue tinted */
-    --color-background-dark: oklch(0.35 0.03 235); /* Dark for contrast */
-
-    /* Apply the colors as custom properties that Tailwind v4 can use */
-    --gray-500: var(--color-gray);
-    --teal-500: var(--color-teal);
-    --sea-500: var(--color-sea);
-    --cold-500: var(--color-cold);
-
-    --success-500: var(--color-success);
-    --success-300: var(--color-success-light);
-    --success-700: var(--color-success-dark);
-
-    --danger-500: var(--color-danger);
-    --danger-300: var(--color-danger-light);
-    --danger-700: var(--color-danger-dark);
-
-    /* Map these to new v4 color classes */
-    --text: var(--color-text);
-    --text-muted: var(--color-text-muted);
-    --text-inverted: var(--color-text-inverted);
-
-    --bg: var(--color-background);
-    --bg-muted: var(--color-background-muted);
-    --bg-dark: var(--color-background-dark);
-  }
-
-  /* Dark mode overrides */
-  .dark {
-    --color-text: oklch(0.95 0.01 89); /* Light text for dark mode */
-    --color-text-muted: oklch(0.8 0.02 100); /* Slightly dimmed text */
-    --color-text-inverted: oklch(
-      0.25 0.02 255
-    ); /* Dark text for light buttons */
-
-    --color-background: oklch(0.2 0.02 245); /* Dark background */
-    --color-background-muted: oklch(0.3 0.03 235); /* Slightly lighter */
-    --color-background-dark: oklch(0.15 0.02 245); /* Very dark */
-
-    --success-300: oklch(0.68 0.145 142.5);
-    --danger-300: oklch(0.75 0.17 27.16);
-
-    /* Update mapped colors for dark mode */
-    --text: var(--color-text);
-    --text-muted: var(--color-text-muted);
-    --text-inverted: var(--color-text-inverted);
-
-    --bg: var(--color-background);
-    --bg-muted: var(--color-background-muted);
-    --bg-dark: var(--color-background-dark);
   }
 
   /* Apply colors to HTML elements for base styling */
