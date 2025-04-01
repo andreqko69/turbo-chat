@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from '~/components/atoms/card';
 
 export default function AuthLayout({
   children,
@@ -8,7 +7,7 @@ export default function AuthLayout({
 }) {
   return (
     <div className="mx-auto flex h-lvh max-w-[400px] items-center justify-center">
-      <Card className="w-full">{children}</Card>
+      {children}
     </div>
   );
 }

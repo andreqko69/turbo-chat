@@ -13,6 +13,13 @@ import {
 } from '~/components/molecules/form';
 import { Input } from '~/components/atoms/input';
 import { Button } from '~/components/atoms/button';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '~/components/atoms/card';
 
 type SignupData = typeof SignupSchema.infer;
 
@@ -33,102 +40,111 @@ const SignupForm = () => {
   };
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-3"
-      >
-        <FormField
-          name="email"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input {...field} type="email" />
-              </FormControl>
-              {form.formState.errors.email && (
-                <FormMessage>{form.formState.errors.email.message}</FormMessage>
+    <Card className="w-full">
+      <CardHeader>
+        <CardTitle>Registration</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col gap-3"
+          >
+            <FormField
+              name="email"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="email" />
+                  </FormControl>
+                  {form.formState.errors.email && (
+                    <FormMessage>
+                      {form.formState.errors.email.message}
+                    </FormMessage>
+                  )}
+                </FormItem>
               )}
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="firstName"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>First Name</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
-              {form.formState.errors.firstName && (
-                <FormMessage>
-                  First name {form.formState.errors.firstName.message}
-                </FormMessage>
+            />
+            <FormField
+              name="firstName"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>First Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  {form.formState.errors.firstName && (
+                    <FormMessage>
+                      First name {form.formState.errors.firstName.message}
+                    </FormMessage>
+                  )}
+                </FormItem>
               )}
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="lastName"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Last Name</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
-              {form.formState.errors.lastName && (
-                <FormMessage>
-                  Last name {form.formState.errors.lastName.message}
-                </FormMessage>
+            />
+            <FormField
+              name="lastName"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Last Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  {form.formState.errors.lastName && (
+                    <FormMessage>
+                      Last name {form.formState.errors.lastName.message}
+                    </FormMessage>
+                  )}
+                </FormItem>
               )}
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="password"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input {...field} type="password" />
-              </FormControl>
-              {form.formState.errors.password && (
-                <FormMessage>
-                  Password {form.formState.errors.password.message}
-                </FormMessage>
+            />
+            <FormField
+              name="password"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="password" />
+                  </FormControl>
+                  {form.formState.errors.password && (
+                    <FormMessage>
+                      Password {form.formState.errors.password.message}
+                    </FormMessage>
+                  )}
+                </FormItem>
               )}
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="confirmPassword"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirm password</FormLabel>
-              <FormControl>
-                <Input {...field} type="password" />
-              </FormControl>
-              {form.formState.errors.confirmPassword && (
-                <FormMessage>
-                  {form.formState.errors.confirmPassword.message}
-                </FormMessage>
+            />
+            <FormField
+              name="confirmPassword"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Confirm password</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="password" />
+                  </FormControl>
+                  {form.formState.errors.confirmPassword && (
+                    <FormMessage>
+                      {form.formState.errors.confirmPassword.message}
+                    </FormMessage>
+                  )}
+                </FormItem>
               )}
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Register</Button>
-      </form>
-      <div className="mt-3 flex justify-end">
+            />
+            <Button type="submit">Register</Button>
+          </form>
+        </Form>
+      </CardContent>
+      <CardFooter className="justify-end">
         <NavLink to="/auth/login" className="text-cold">
           Sign in
         </NavLink>
-      </div>
-    </Form>
+      </CardFooter>
+    </Card>
   );
 };
 

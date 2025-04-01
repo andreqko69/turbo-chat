@@ -1,4 +1,3 @@
-import { CardContent, CardHeader, CardTitle } from '~/components/atoms/card';
 import SignupForm from '~/features/auth/signup-form';
 
 export function meta() {
@@ -12,14 +11,5 @@ export function meta() {
 }
 
 export default function Register() {
-  return (
-    <>
-      <CardHeader>
-        <CardTitle>Registration</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <SignupForm />
-      </CardContent>
-    </>
-  );
+  return <SignupForm />;
 }
