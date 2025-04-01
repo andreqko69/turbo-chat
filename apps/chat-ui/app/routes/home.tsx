@@ -15,5 +15,5 @@ export function loader() {
 }
 
 export default function Home() {
-  return <div>Home</div>;
+  return null;
 }
