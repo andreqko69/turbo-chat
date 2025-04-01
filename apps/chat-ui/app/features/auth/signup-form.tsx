@@ -115,7 +115,6 @@ const SignupForm = () => {
               </FormControl>
               {form.formState.errors.confirmPassword && (
                 <FormMessage>
-                  Confirm password{' '}
                   {form.formState.errors.confirmPassword.message}
                 </FormMessage>
               )}

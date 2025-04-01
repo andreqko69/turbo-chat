@@ -30,7 +30,10 @@ export const SignupSchema = type({
   lastName: NameSchema,
 }).narrow((data, ctx) => {
   if (data.password !== data.confirmPassword) {
-    return ctx.reject('Passwords do not match');
+    return ctx.reject({
+      message: 'Passwords do not match',
+      path: ['confirmPassword'],
+    });
   }
 
   return true;
