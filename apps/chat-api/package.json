@@ -2,6 +2,7 @@
   "name": "chat-api",
   "type": "module",
   "scripts": {
+    "build": "tsx build src/index.ts",
     "dev": "tsx watch src/index.ts",
     "lint": "npx tsc --noEmit && npx eslint"
   },

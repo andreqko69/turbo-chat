@@ -9,7 +9,7 @@ const config = Array.isArray(baseConfig) ? baseConfig : [baseConfig];
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   ...config,
-  globalIgnores(['.react-router/*']),
+  globalIgnores(['.react-router/*', 'build/*']),
   {
     plugins: {
       react: reactPlugin,

@@ -63,6 +63,9 @@ importers:
       '@react-router/serve':
         specifier: ^7.4.1
         version: 7.4.1(react-router@7.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.2)
+      '@repo/shared-types':
+        specifier: workspace:*
+        version: link:../../packages/shared-types
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -109,9 +112,6 @@ importers:
       '@repo/prettier-config':
         specifier: workspace:*
         version: link:../../packages/prettier-config
-      '@repo/shared-types':
-        specifier: workspace:*
-        version: link:../../packages/shared-types
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -154,6 +154,9 @@ importers:
       vite:
         specifier: ^5.4.11
         version: 5.4.15(@types/node@20.17.28)(lightningcss@1.29.2)
+      vite-bundle-analyzer:
+        specifier: ^0.18.1
+        version: 0.18.1
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.8.2)(vite@5.4.15(@types/node@20.17.28)(lightningcss@1.29.2))
@@ -166,6 +169,9 @@ importers:
       '@repo/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
+      eslint:
+        specifier: ^9.23.0
+        version: 9.23.0(jiti@2.4.2)
       eslint-config-prettier:
         specifier: ^10.1.1
         version: 10.1.1(eslint@9.23.0(jiti@2.4.2))
@@ -175,6 +181,9 @@ importers:
       eslint-plugin-turbo:
         specifier: ^2.4.4
         version: 2.4.4(eslint@9.23.0(jiti@2.4.2))(turbo@2.4.4)
+      prettier:
+        specifier: 3.5.3
+        version: 3.5.3
       typescript-eslint:
         specifier: ^8.28.0
         version: 8.28.0(eslint@9.23.0(jiti@2.4.2))(typescript@5.8.2)
@@ -3462,6 +3471,10 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  vite-bundle-analyzer@0.18.1:
+    resolution: {integrity: sha512-VQgrvxRuiZuOhM61p85lGpxzWR3TUbgn1LYtCBL09LUVoKy+yoxPwWTq+ihuPqT5L4tp0Jiiaa/dGYIRF8Guag==}
+    hasBin: true
 
   vite-node@3.0.0-beta.2:
     resolution: {integrity: sha512-ofTf6cfRdL30Wbl9n/BX81EyIR5s4PReLmSurrxQ+koLaWUNOEo8E0lCM53OJkb8vpa2URM2nSrxZsIFyvY1rg==}
@@ -6918,6 +6931,8 @@ snapshots:
   validate-npm-package-name@5.0.1: {}
 
   vary@1.1.2: {}
+
+  vite-bundle-analyzer@0.18.1: {}
 
   vite-node@3.0.0-beta.2(@types/node@20.17.28)(lightningcss@1.29.2):
     dependencies:
