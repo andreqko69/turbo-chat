@@ -13,6 +13,7 @@ import {
 } from '~/components/molecules/form';
 import { Input } from '~/components/atoms/input';
 import { Button } from '~/components/atoms/button';
+import { Spinner } from '~/components/atoms/spinner';
 
 type LoginData = typeof LoginSchema.infer;
 
@@ -27,8 +28,6 @@ const LoginForm = () => {
 
   const onSubmit = async (data: LoginData) => {
     console.log('data', data);
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-    console.log('Finish data loading');
   };
 
   const { isSubmitting } = form.formState;
@@ -72,7 +71,7 @@ const LoginForm = () => {
           )}
         />
         <Button type="submit" disabled={isSubmitting}>
-          Login
+          Login {isSubmitting && <Spinner size="default" />}
         </Button>
       </form>
       <div className="mt-3 flex justify-end">
