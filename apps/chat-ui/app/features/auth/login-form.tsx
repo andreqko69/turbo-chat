@@ -25,9 +25,13 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = (data: LoginData) => {
+  const onSubmit = async (data: LoginData) => {
     console.log('data', data);
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    console.log('Finish data loading');
   };
+
+  const { isSubmitting } = form.formState;
 
   return (
     <Form {...form}>
@@ -67,7 +71,9 @@ const LoginForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          Login
+        </Button>
       </form>
       <div className="mt-3 flex justify-end">
         <NavLink to="/auth/register" className="text-cold">

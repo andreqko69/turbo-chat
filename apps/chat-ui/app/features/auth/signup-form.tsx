@@ -121,7 +121,7 @@ const SignupForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit">Register</Button>
       </form>
       <div className="mt-3 flex justify-end">
         <NavLink to="/auth/login" className="text-cold">
