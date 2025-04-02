@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@repo/typescript-config/react-internal.json",
   "include": [
     "**/*",
@@ -11,8 +12,7 @@
     "rootDirs": [".", "./.react-router/types"],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
-      "shared-types": ["../../packages/shared-types/src/index.ts"]
+      "~/*": ["./app/*"]
     }
   }
 }
