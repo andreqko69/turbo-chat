@@ -1,6 +1,6 @@
-import globals from 'globals';
-import { globalIgnores } from 'eslint/config';
 import baseConfig from '@repo/eslint-config';
+import { globalIgnores } from 'eslint/config';
+import globals from 'globals';
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [

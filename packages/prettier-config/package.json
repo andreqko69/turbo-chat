@@ -2,5 +2,8 @@
   "name": "@repo/prettier-config",
   "version": "0.0.1",
   "main": "index.js",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1"
+  }
 }

@@ -39,4 +39,13 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   htmlWhitespaceSensitivity: "css",
   proseWrap: "preserve",
+
+  // Prettier plugins
+  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  importOrder: ["<BUILTIN_MODULES>", "", "^react$", "<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "^~/(.*)$", "", "^[..]", "^[.]"],
+  importOrderBuiltinModulesToTop: true,
+  importOrderCaseInsensitive: true,
+  importOrderMergeDuplicateImports: true,
+  importOrderCombineTypeAndValueImports: true,
+  importOrderSortSpecifiers: true,
 };

@@ -1,8 +1,8 @@
 import baseConfig from '@repo/eslint-config';
-import { globalIgnores } from 'eslint/config';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import { globalIgnores } from 'eslint/config';
 
 const config = Array.isArray(baseConfig) ? baseConfig : [baseConfig];
 

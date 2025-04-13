@@ -1,5 +1,5 @@
 {
-  "name": "@repo/shared-types",
+  "name": "@repo/shared-schemas",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,11 +15,14 @@
   },
   "private": true,
   "dependencies": {
+    "arktype": "^2.1.15"
+  },
+  "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.13.14",
-    "arktype": "^2.1.15",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "eslint": "^9.23.0",
     "prettier": "3.5.3",
     "typescript": "^5.7.2"

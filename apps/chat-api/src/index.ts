@@ -1,13 +1,15 @@
 import { serve } from '@hono/node-server';
-import createApp from './lib/app';
-import prisma from './lib/db';
+
+import env from './env';
+import createApp from './lib/app/create-app';
+import { shutdownDb } from './lib/db';
 
 createApp()
   .then((app) => {
     serve(
       {
         fetch: app.fetch,
-        port: 3000,
+        port: env.PORT,
       },
       (info) => {
         console.log(`Server is running on http://localhost:${info.port}`);
@@ -16,5 +18,5 @@ createApp()
   })
   .catch(async (error) => {
     console.error(`Error during app start: ${error}`);
-    prisma.$disconnect();
+    await shutdownDb();
   });

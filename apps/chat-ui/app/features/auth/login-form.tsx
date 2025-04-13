@@ -1,8 +1,18 @@
-import { useForm } from 'react-hook-form';
 import { arktypeResolver } from '@hookform/resolvers/arktype';
-import { LoginSchema } from '@repo/shared-types';
+import { LoginSchema } from '@repo/shared-schemas';
+import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router';
 
+import { Button } from '~/components/atoms/button';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '~/components/atoms/card';
+import { Input } from '~/components/atoms/input';
+import { Spinner } from '~/components/atoms/spinner';
 import {
   Form,
   FormControl,
@@ -11,16 +21,6 @@ import {
   FormLabel,
   FormMessage,
 } from '~/components/molecules/form';
-import { Input } from '~/components/atoms/input';
-import { Button } from '~/components/atoms/button';
-import { Spinner } from '~/components/atoms/spinner';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/atoms/card';
 
 type LoginData = typeof LoginSchema.infer;
 
@@ -34,6 +34,7 @@ const LoginForm = () => {
   });
 
   const onSubmit = async (data: LoginData) => {
+    console.log('Url is:', import.meta.env.VITE_API_URL);
     console.log('data', data);
   };
 

@@ -1,3 +1,6 @@
 import prettierConfig from '@repo/prettier-config';
 
-export default { ...prettierConfig, plugins: ['prettier-plugin-tailwindcss'] };
+export default {
+  ...prettierConfig,
+  plugins: [...prettierConfig.plugins, 'prettier-plugin-tailwindcss'],
+};

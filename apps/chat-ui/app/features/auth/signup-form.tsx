@@ -1,17 +1,8 @@
-import { useForm } from 'react-hook-form';
 import { arktypeResolver } from '@hookform/resolvers/arktype';
-import { SignupSchema } from '@repo/shared-types';
+import { SignupSchema } from '@repo/shared-schemas';
+import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router';
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '~/components/molecules/form';
-import { Input } from '~/components/atoms/input';
 import { Button } from '~/components/atoms/button';
 import {
   Card,
@@ -20,6 +11,15 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/atoms/card';
+import { Input } from '~/components/atoms/input';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '~/components/molecules/form';
 
 type SignupData = typeof SignupSchema.infer;
 
@@ -35,7 +35,7 @@ const SignupForm = () => {
     },
   });
 
-  const onSubmit = (data: SignupData) => {
+  const onSubmit = async (data: SignupData) => {
     console.log('data', data);
   };
 
