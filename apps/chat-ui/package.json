@@ -7,7 +7,8 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typegen": "react-router typegen",
-    "lint": "pnpm typegen && tsc --noEmit && npx eslint"
+    "lint": "npx eslint",
+    "typecheck": "pnpm typegen && tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",

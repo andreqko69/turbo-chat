@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "Andrii Stepanov",
   "license": "ISC",
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "husky": "^9.1.7",
     "turbo": "^2.4.4"

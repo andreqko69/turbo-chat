@@ -1,0 +1,13 @@
+model Room {
+  id        String    @id @default(cuid())
+  name      String
+  creatorId String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  creator  User      @relation(fields: [creatorId], references: [id])
+  messages Message[]
+
+  @@map("rooms")
+}
