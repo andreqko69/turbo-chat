@@ -9,6 +9,6 @@ export default defineConfig({
     tailwindcss(),
     reactRouter(),
     tsconfigPaths(),
-    analyzer({ openAnalyzer: false }),
+    ...(process.env.ANALYZE ? [analyzer({ openAnalyzer: true })] : []),
   ],
 });

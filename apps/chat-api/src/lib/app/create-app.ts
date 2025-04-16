@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
 import { intializeDb } from '../db';
+import createAppRouter from './create-app-router';
 
 const createApp = async () => {
   const app = new Hono();
@@ -17,6 +18,10 @@ const createApp = async () => {
       credentials: true,
     }),
   );
+
+  const appRouter = createAppRouter();
+
+  app.route('/api/v1', appRouter);
 
   await intializeDb();
 

@@ -1,6 +1,4 @@
-import { PrismaClient } from './generated';
-
-const prisma = new PrismaClient();
+import { prisma } from '@repo/database';
 
 export const intializeDb = async () => {
   await prisma.$connect();

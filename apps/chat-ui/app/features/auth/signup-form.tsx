@@ -20,6 +20,7 @@ import {
   FormLabel,
   FormMessage,
 } from '~/components/molecules/form';
+import authClient from '~/lib/auth/auth';
 
 type SignupData = typeof SignupSchema.infer;
 
@@ -37,6 +38,15 @@ const SignupForm = () => {
 
   const onSubmit = async (data: SignupData) => {
     console.log('data', data);
+    try {
+      await authClient.signUp.email({
+        email: data.email,
+        password: data.password,
+        name: `${data.firstName} ${data.lastName}`,
+      });
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   };
 
   return (

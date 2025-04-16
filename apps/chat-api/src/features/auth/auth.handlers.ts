@@ -9,6 +9,8 @@ const createAuthHandlers = () => {
     const validatedBody = SignupSchema(body);
     console.log('validatedBody', validatedBody);
   });
+
+  return authRoutes;
 };
 
 export default createAuthHandlers;

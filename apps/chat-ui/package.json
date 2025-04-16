@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
+    "build:analyze": "ANALYZE=true react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typegen": "react-router typegen",
@@ -18,6 +19,7 @@
     "@react-router/serve": "^7.4.1",
     "@reduxjs/toolkit": "^2.6.1",
     "@repo/shared-schemas": "workspace:*",
+    "@repo/database": "workspace:*",
     "better-auth": "^1.2.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

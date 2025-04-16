@@ -1,17 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
 
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
 
     "strict": true,
     "noUnusedLocals": true,

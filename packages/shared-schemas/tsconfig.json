@@ -3,10 +3,13 @@
   "include": ["src/**/*", "index.ts"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2020",
     "outDir": "dist",
     "declaration": true,
     "sourceMap": false,
-    "declarationMap": false,
+    "declarationMap": true,
     "types": ["node"]
   }
 }
