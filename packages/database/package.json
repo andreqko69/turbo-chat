@@ -1,15 +1,22 @@
 {
   "name": "@repo/database",
   "version": "0.0.1",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "generated"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run clean && npm run db:generate",
+    "postinstall": "npm run db:generate",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build",
     "db:generate": "prisma generate",

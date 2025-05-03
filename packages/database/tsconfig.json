@@ -6,6 +6,8 @@
     "outDir": "dist",
     "declaration": true,
     "sourceMap": false,
-    "declarationMap": true
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "types": ["node", "@prisma/client"]
   }
 }
