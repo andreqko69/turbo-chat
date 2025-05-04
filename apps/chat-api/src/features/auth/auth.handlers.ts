@@ -7,6 +7,7 @@ const createAuthHandlers = () => {
   authRoutes.post('/signup', async (c) => {
     const body = await c.req.json();
     const validatedBody = SignupSchema(body);
+
     console.log('validatedBody', validatedBody);
   });
 

@@ -1,0 +1,17 @@
+{
+  "name": "@repo/tailwind-config",
+  "version": "1.0.0",
+  "description": "Shared Tailwind CSS v4 theme",
+  "main": "src/theme.css",
+  "files": [
+    "src/theme.css"
+  ],
+  "peerDependencies": {
+    "tailwindcss": "^4.1.5",
+    "tw-animate-css": "^1.2.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.0"
+}
