@@ -2,5 +2,10 @@
 @import '@repo/tailwind-config/src/theme.css';
 
 body {
+  color: var(--primary-foreground);
+}
+
+body,
+.docs-story {
   background-color: var(--color-background);
 }
