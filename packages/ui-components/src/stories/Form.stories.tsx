@@ -56,7 +56,6 @@ export const Default = {
                   <FormControl>
                     <Input type="email" {...field} />
                   </FormControl>
-                  <FormDescription>Enter your email address.</FormDescription>
                   <FormMessage>email is invalid</FormMessage>
                 </FormItem>
               )}
