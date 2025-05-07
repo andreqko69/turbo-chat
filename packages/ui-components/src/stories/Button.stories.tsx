@@ -6,7 +6,7 @@ import { Button } from '~/components/atoms/button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Atoms/Button',
+  title: 'Design System/Atoms/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -16,9 +16,8 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    size: { control: 'select', options: ['default', 'sm', 'lg', 'icon'] },
     variant: {
-      control: 'select',
+      control: { type: 'select' },
       options: [
         'default',
         'secondary',
@@ -27,6 +26,26 @@ const meta = {
         'outline',
         'link',
       ],
+      description: 'The variant of the button.',
+      defaultValue: 'default',
+      type: 'string',
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['default', 'sm', 'lg', 'icon'],
+      description: 'The size of the button.',
+      defaultValue: 'default',
+      type: 'string',
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'Callback function when the button is clicked.',
+    },
+    asChild: {
+      control: 'boolean',
+      description:
+        'If true, the button will be rendered as a child component. Use this when you want to use a different element as the button.',
+      defaultValue: false,
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -36,69 +55,39 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-  args: {
-    variant: 'default',
-    children: 'Button',
+  render: (args) => {
+    return <Button {...args}>Default Button</Button>;
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    variant: 'secondary',
-    children: 'Button',
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Variants: Story = {
+  render: () => {
+    return (
+      <div className="flex gap-2">
+        <Button variant="default">Default</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="link">Link</Button>
+      </div>
+    );
   },
 };
 
-export const Destructive: Story = {
-  args: {
-    variant: 'destructive',
-    children: 'Button',
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: 'ghost',
-    children: 'Button',
-  },
-};
-
-export const Outline: Story = {
-  args: {
-    variant: 'outline',
-    children: 'Button',
-  },
-};
-
-export const Link: Story = {
-  args: {
-    variant: 'link',
-    children: 'Link',
-  },
-};
-
-export const Icon: Story = {
-  args: {
-    variant: 'default',
-    size: 'icon',
-    children: <User />,
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    variant: 'default',
-    children: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'sm',
-    variant: 'default',
-    children: 'Button',
+export const Sizes: Story = {
+  render: () => {
+    return (
+      <div className="flex items-center gap-2">
+        <Button size="default">Default</Button>
+        <Button size="sm">Small</Button>
+        <Button size="lg">Large</Button>
+        <Button size="icon">
+          <User />
+        </Button>
+      </div>
+    );
   },
 };
