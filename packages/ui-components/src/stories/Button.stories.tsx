@@ -3,6 +3,7 @@ import { fn } from '@storybook/test';
 import { User } from 'lucide-react';
 
 import { Button } from '~/components/atoms/button';
+import { Card, CardContent } from '~/components/atoms/card';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -65,14 +66,16 @@ export const Default: Story = {
 export const Variants: Story = {
   render: () => {
     return (
-      <div className="flex gap-2">
-        <Button variant="default">Default</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="destructive">Destructive</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="link">Link</Button>
-      </div>
+      <Card className="flex gap-2">
+        <CardContent className="flex items-center gap-4 p-6">
+          <Button variant="default">Default</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="destructive">Destructive</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="link">Link</Button>
+        </CardContent>
+      </Card>
     );
   },
 };
@@ -80,14 +83,16 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => {
     return (
-      <div className="flex items-center gap-2">
-        <Button size="default">Default</Button>
-        <Button size="sm">Small</Button>
-        <Button size="lg">Large</Button>
-        <Button size="icon">
-          <User />
-        </Button>
-      </div>
+      <Card className="flex gap-2">
+        <CardContent className="flex items-center gap-4 p-6">
+          <Button size="default">Default</Button>
+          <Button size="sm">Small</Button>
+          <Button size="lg">Large</Button>
+          <Button size="icon">
+            <User />
+          </Button>
+        </CardContent>
+      </Card>
     );
   },
 };

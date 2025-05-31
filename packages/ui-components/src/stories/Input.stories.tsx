@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Card, CardContent } from '~/components/atoms/card';
 import { Input } from '~/components/atoms/input';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -83,5 +84,11 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-  render: (props) => <Input {...props} />,
+  render: (props) => (
+    <Card>
+      <CardContent className="p-6">
+        <Input {...props} />
+      </CardContent>
+    </Card>
+  ),
 };
