@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 
-import { Button } from '~/components/atoms/button';
-import { Card, CardContent, CardHeader } from '~/components/atoms/card';
-import { Input } from '~/components/atoms/input';
+import { Button } from '@/components/atoms/button';
+import { Card, CardContent, CardHeader } from '@/components/atoms/card';
+import { Input } from '@/components/atoms/input';
 import {
   Form,
   FormControl,
@@ -12,7 +12,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '~/components/ogranisms/form';
+} from '@/components/ogranisms/form';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

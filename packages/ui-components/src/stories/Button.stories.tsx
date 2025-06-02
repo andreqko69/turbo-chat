@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { User } from 'lucide-react';
 
-import { Button } from '~/components/atoms/button';
-import { Card, CardContent } from '~/components/atoms/card';
+import { Button } from '@/components/atoms/button';
+import { Card, CardContent } from '@/components/atoms/card';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

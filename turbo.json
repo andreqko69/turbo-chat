@@ -13,7 +13,7 @@
     },
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": ["dist/**", "build/**"],
+      "outputs": ["dist/**", "build/**", ".next/**"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },
     "lint": {

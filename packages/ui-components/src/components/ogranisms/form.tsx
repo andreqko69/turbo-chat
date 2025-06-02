@@ -11,8 +11,8 @@ import {
   type FieldValues,
 } from 'react-hook-form';
 
-import { Label } from '~/components/atoms/label';
-import { cn } from '~/lib/utils';
+import { Label } from '@/components/atoms/label';
+import { cn } from '@/lib/utils';
 
 const Form = FormProvider;
 

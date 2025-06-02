@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '~/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '~/components/atoms/card';
+} from '@/components/atoms/card';
 
 const meta: Meta<typeof Card> = {
   title: 'Design System/Atoms/Card',

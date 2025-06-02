@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Spinner } from '~/components/atoms/spinner';
+import { Spinner } from '@/components/atoms/spinner';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

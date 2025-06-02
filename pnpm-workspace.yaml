@@ -1,3 +1,12 @@
 packages:
   - "apps/*"
   - "packages/*"
+catalog:
+  react: "^19.1.0"
+  react-dom: "^19.1.0"
+  react-hook-form: "^7.55.0"
+  typescript: "^5.8.3"
+  vite: "^5.4.15"
+  vitest: "^3.1.2"
+  eslint: "^9.23.0"
+  zod: "^3.24.4"

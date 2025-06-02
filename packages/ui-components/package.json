@@ -1,10 +1,18 @@
 {
-  "name": "ui-components",
+  "name": "@repo/ui-components",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc -p tsconfig.build.json && npx tsc-alias",
     "storybook": "concurrently 'pnpm tailwind:watch' 'pnpm storybook:watch'",
     "storybook:build": "npx @tailwindcss/cli -i ./src/tailwind-input.css -o ./src/index.css && storybook build",
     "storybook:watch": "storybook dev -p 6006",
@@ -22,13 +30,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.485.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-hook-form": "^7.55.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.0",
     "tw-animate-css": "^1.2.5",
-    "zod": "^3.24.4"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3",
@@ -64,5 +69,10 @@
     "typescript": "^5.8.3",
     "vite": "^5.4.15",
     "vitest": "^3.1.2"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "catalog:"
   }
 }
